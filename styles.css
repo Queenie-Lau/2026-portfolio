@@ -290,7 +290,7 @@ main {
 }
 
 input:checked+.slider {
-    background-color: #a2c9a2;
+    background-color: #690000;
 }
 
 input:focus+.slider {

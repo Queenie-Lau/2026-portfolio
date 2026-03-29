@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Queenie Lau - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="photo.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="js/3d-cursor.js"></script>
+    <script type="module" src="js/photo-effect.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">qlau</div>
+        <ul class="nav-links">
+          <li><a href="works.html">Works</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="photo-gallery-container">
+      <section class="photo-hero">
+        <div class="hero-image-container">
+          <img
+            src="assets/SmallBeforeTheHorizon.jpeg"
+            alt="Ahn Studios Pajama Launch"
+            class="hero-img"
+          />
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+          <!-- <p class="hero-label">CURRENT ARCHIVE</p> -->
+          <h1 class="reveal-text">VOL Ø2: I DREAM IN PHOTO</h1>
+          <p class="hero-subtitle">
+            THERE IS NO LIGHT WITHOUT SHADOW, JUST AS THERE IS NO SHADOW WITHOUT
+            LIGHT. DIGITALLY CAPTURED MOMENTS OF BEAUTY, STILLNESS, AND
+            TRANSITION IN THE PHYSICAL WORLD. A VISUAL CELEBRATION OF THE
+            IN-BETWEEN, THE LIMINAL, AND THE ETHERAL.
+          </p>
+        </div>
+      </section>
+
+      <section class="photo-projects-list">
+        <a
+          href="https://www.shopahnstudio.com/collections/apparel"
+          target="_blank"
+          class="photo-item"
+          data-category="product"
+        >
+          <div class="photo-row">
+            <div class="photo-text-content">
+              <span class="photo-number">01</span>
+              <h2 class="photo-title">AHN STUDIOS</h2>
+              <p class="photo-description">
+                Dreamy, ethereal product photography for a woman-owned, LA-based
+                small business
+              </p>
+              <div class="metadata">✷ PRODUCT PHOTOGRAPHY</div>
+            </div>
+
+            <div class="photo-preview-wrapper">
+              <img
+                src="assets/product-thumb.jpg"
+                alt="Ahn Studios Preview"
+                class="photo-thumb"
+              />
+            </div>
+
+            <span class="sparkle">✷</span>
+          </div>
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

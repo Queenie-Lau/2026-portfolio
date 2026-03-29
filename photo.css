@@ -1,3 +1,13 @@
+/* --- GLOBAL THEME & FONTS --- */
+:root {
+    --font-serif: "Georgia", serif;
+    /* Replace with your specific serif */
+    --font-sans: "Inter", sans-serif;
+    /* Replace with your specific sans */
+    --text-white: #ffffff;
+    --accent-red: #ad1102;
+}
+
 /* --- PHOTO GALLERY STYLES --- */
 .photo-gallery-container {
     max-width: 1400px;
@@ -19,7 +29,7 @@
 .subtitle {
     font-family: var(--font-sans);
     letter-spacing: 2px;
-    color:white;
+    color: white;
     text-transform: uppercase;
     font-size: 0.8rem;
 }
@@ -29,6 +39,9 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 4rem 0;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .photo-row {
@@ -36,6 +49,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: 8vh 4rem;
 }
 
 .photo-text-content {
@@ -46,7 +60,9 @@
 .photo-number {
     font-family: var(--font-sans);
     font-size: 0.7rem;
-    color: #ad1102; /* Match your Lotus red for accent */
+    letter-spacing: 0px;
+    font-weight: 500;
+    color: white;
     margin-bottom: 0.5rem;
     display: block;
 }
@@ -64,26 +80,29 @@
     color: white;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    text-transform: uppercase;
 }
 
 .metadata {
     font-family: var(--font-sans);
     font-size: 0.65rem;
     letter-spacing: 2px;
-    opacity: 0.4;
+    opacity: 0.8;
 }
 
-/* --- THE REVEAL --- */
+/* --- THE REVEAL & CINEMATIC BLUR --- */
 .photo-preview-wrapper {
     max-width: 0;
     opacity: 0;
     overflow: hidden;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     transform: translateX(30px) scale(0.9);
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Placeholder color */
 }
 
 .photo-item:hover .photo-preview-wrapper {
-    max-width: 400px; /* Larger than code thumbs for visual impact */
+    max-width: 400px;
     opacity: 1;
     transform: translateX(0) scale(1);
     margin: 0 3rem;
@@ -91,14 +110,24 @@
 
 .photo-thumb {
     width: 350px;
-    height: 450px; /* Tall portrait-style crops feel like high-fashion magazines */
+    height: 450px;
     object-fit: cover;
-    filter: grayscale(100%); /* Start grayscale */
-    transition: filter 0.5s ease;
+    filter: grayscale(100%) blur(10px);
+    /* Initial blur */
+    opacity: 0;
+    /* Start invisible */
+    transition: filter 0.8s ease, opacity 0.8s ease;
 }
 
-.photo-item:hover .photo-thumb {
-    filter: grayscale(0%); /* Bleed back into color on hover */
+/* This class should be added via JS when the image finishes loading */
+.photo-thumb.loaded {
+    opacity: 1;
+    filter: grayscale(100%) blur(0px);
+}
+
+.photo-item:hover .photo-thumb.loaded {
+    filter: grayscale(0%) blur(0px);
+    /* Bleed into color on hover */
 }
 
 .photo-item:hover .photo-title {
@@ -108,24 +137,17 @@
 /* --- PHOTO HERO SECTION --- */
 .photo-hero {
     position: relative;
-    /* Use 96vw and auto margin to ensure perfect centering */
     width: 96vw;
     margin: 0 auto 10vh auto;
-
     height: 85vh;
     display: flex;
     align-items: flex-end;
     padding-bottom: 5vh;
     overflow: hidden;
-
-    /* Smoother, high-end rounded corners */
     border-radius: 24px;
-
-    /* Optional: subtle border to define the edge against dark backgrounds */
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Ensure the image block inside also fills the space */
 .hero-image-container {
     position: absolute;
     top: 0;
@@ -133,14 +155,22 @@
     width: 100%;
     height: 100%;
     z-index: -1;
+    background: #4e0202;
 }
 
 .hero-img {
     width: 100%;
     height: 100%;
-    /* This ensures the photo covers the area without stretching */
     object-fit: cover;
+    opacity: 0;
+    filter: blur(20px);
+    transition: opacity 1.5s ease, filter 1.5s ease;
     animation: slowPan 8s infinite alternate ease-in-out;
+}
+
+.hero-img.loaded {
+    opacity: 1;
+    filter: blur(0px);
 }
 
 @keyframes slowPan {
@@ -150,23 +180,6 @@
 
     100% {
         transform: scale(1.05) translate(-1%, -1%);
-    }
-}
-
-/* Adjust the content to stay aligned with your grid padding */
-.hero-content {
-    z-index: 1;
-    padding-left: 4rem;
-    /* Match your container's padding */
-}
-
-@keyframes slowZoom {
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.1);
     }
 }
 
@@ -181,6 +194,7 @@
 
 .hero-content {
     z-index: 1;
+    padding-left: 4rem;
 }
 
 .hero-label {
@@ -199,10 +213,81 @@
     opacity: 0.8;
 }
 
-/* Ensure the AHN STUDIOS link looks clean */
-.photo-item {
+/* --- INSTAGRAM PREVIEW --- */
+.instagram-preview {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8vh 4rem;
+}
+
+.insta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+}
+
+.insta-header a {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    color: var(--text-white);
+    opacity: 0.7;
+    text-transform: uppercase;
     text-decoration: none;
-    /* Removes underline from the link */
-    color: inherit;
-    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.insta-header a:hover {
+    opacity: 1;
+}
+
+.insta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.insta-post {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--accent-red);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.insta-post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(1) contrast(1.1);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.insta-post img.loaded {
+    opacity: 1;
+}
+
+.insta-post:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* --- PERFORMANCE OPTIMIZATION --- */
+.photo-thumb,
+.hero-img,
+.photo-preview-wrapper {
+    will-change: transform, opacity, filter;
+    backface-visibility: hidden;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .insta-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo-row {
+        padding: 4vh 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

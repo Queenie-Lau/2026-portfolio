@@ -15,3 +15,18 @@ window.addEventListener('scroll', () => {
         heroContent.style.opacity = 1 - (scrolled / 400);
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll('img');
+  
+  images.forEach(img => {
+    // If image is already cached/loaded
+    if (img.complete) {
+      img.classList.add('loaded');
+    }
+    // Otherwise, wait for the load event
+    img.addEventListener('load', () => {
+      img.classList.add('loaded');
+    });
+  });
+});

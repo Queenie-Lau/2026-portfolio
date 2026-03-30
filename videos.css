@@ -1,0 +1,449 @@
+.video-archive {
+    padding: 15vh 4rem 10vh 4rem;
+    padding-top: 2rem;
+}
+
+.archive-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2vh;
+    padding-bottom: 2rem;
+}
+
+.archive-title h1 {
+    font-family: var(--font-serif);
+    font-size: 8vw;
+    line-height: 0.85;
+    letter-spacing: -2%;
+    text-transform: uppercase;
+}
+
+.vol-label {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    letter-spacing: -2%;
+    font-size: 2rem;
+}
+
+/* THE VIDEO LIST */
+.video-link-wrapper {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.video-grid-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: none;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-meta {
+    flex: 1;
+}
+
+.video-index {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    opacity: 0.4;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.video-title {
+    font-family: var(--font-serif);
+    font-size: 4vw;
+    text-transform: uppercase;
+    transition: transform 0.4s ease;.video-archive {
+            padding: 15vh 4rem 10vh 4rem;
+        }
+    
+        .archive-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10vh;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 2rem;
+        }
+    
+        .archive-title h1 {
+            font-family: var(--font-serif);
+            font-size: 8vw;
+            line-height: 0.85;
+            letter-spacing: -2%;
+            text-transform: uppercase;
+        }
+    
+        .vol-label {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            letter-spacing: -2%;
+            font-size: 2rem;
+            opacity: 0.6;
+        }
+    
+        /* THE VIDEO LIST */
+        .video-link-wrapper {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+    
+        .video-grid-container {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .video-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: none;
+            /* Managed by your custom 3D cursor */
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    
+        .video-meta {
+            flex: 1;
+        }
+    
+        .video-index {
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            opacity: 0.4;
+            display: block;
+            margin-bottom: 1rem;
+        }
+    
+        .video-title {
+            font-family: var(--font-serif);
+            font-size: 4vw;
+            text-transform: uppercase;
+            transition: transform 0.4s ease;
+        }
+    
+        .video-tags {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+            font-size: 0.7rem;
+            opacity: 0.6;
+            letter-spacing: 1px;
+        }
+    
+        /* THE ARROW GATE - Expands and shows the tiny arrow */
+        .video-preview-gate {
+            width: 0;
+            height: 120px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            /* Subtle background for the gate */
+            transition: width 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+            border-radius: 2px;
+        }
+    
+        .video-entry:hover .video-preview-gate {
+            width: 120px;
+        }
+    
+        .external-arrow-overlay {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+    
+        .external-arrow-overlay svg {
+            width: 40px;
+            height: 40px;
+            /* Tiny scaling: 0.2 approx. 8px arrow */
+            transform: scale(0.2) translate(-20px, 20px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    
+        .video-entry:hover .external-arrow-overlay svg {
+            /* Slide to center and fade in while maintaining tiny scale */
+            transform: scale(0.2) translate(0, 0);
+            opacity: 1;
+        }
+    
+        /* Row Hover States */
+        .video-entry:hover {
+            background: rgba(255, 255, 255, 0.03);
+            padding-left: 1.5rem;
+        }
+    
+        .video-entry:hover .video-title {
+            transform: translateX(10px);
+        }
+}
+
+.video-tags {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    font-size: 0.7rem;
+    opacity: 0.6;
+    letter-spacing: 1px;
+}
+
+.video-preview-gate {
+    width: 0;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    transition: width 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    border-radius: 2px;
+}
+
+.video-entry:hover .video-preview-gate {
+    width: 120px;
+}
+
+.arrow-container {
+    width: 10%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.external-arrow {
+    width: 15px;
+    height: 15px;
+    transform: translate(-15px, 15px);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scale(0.1) translate(-10px, 10px);
+}
+
+.video-entry:hover .external-arrow {
+    /* Slide to center and fade in */
+    transform: translate(0, 0);
+    opacity: 1;
+    transform: scale(0.1) translate(-10px, 10px);
+}
+
+/* Row Hover States */
+.video-entry:hover {
+    background: rgba(80, 8, 8, 0.03);
+    padding-left: 1.5rem;
+    padding-right: 2rem;
+}
+
+.video-entry:hover .video-title {
+    transform: translateX(10px);
+}
+
+/* --- THE ARROW GATE --- */
+.video-preview-gate {
+    width: 0;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+    /* Dark base for the GIF */
+    transition: width 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    border-radius: 2px;
+}
+
+.video-entry:hover .video-preview-gate {
+    width: 180px;
+    /* Slightly wider to show off the GIF better */
+}
+
+.gate-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    filter: grayscale(100%) brightness(0.6);
+    transition: all 0.5s ease;
+}
+
+.video-entry:hover .gate-gif {
+    opacity: 1;
+    filter: grayscale(0%) brightness(0.8);
+    transform: scale(1.1);
+}
+
+.external-arrow-overlay {
+    position: relative;
+    /* Sits above the absolute GIF */
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    /* Adding a slight shadow to the arrow so it stays visible over light GIFs */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.external-arrow-overlay svg {
+    width: 40px;
+    height: 40px;
+    transform: scale(0.2) translate(-20px, 20px);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-entry:hover .external-arrow-overlay svg {
+    transform: scale(0.2) translate(0, 0);
+    opacity: 1;
+}
+
+/* Row Hover States */
+.video-entry:hover {
+    background: rgba(255, 255, 255, 0.03);
+    padding-left: 1.5rem;
+}
+
+.video-entry:hover .video-title {
+    color: #ad1102;
+    /* Optional: adds your signature red on hover */
+    transform: translateX(10px);
+}
+
+/* CINEMATIC LANDING ELEMENT */
+.cinematic-landing {
+    width: 100%;
+    margin-bottom: 10vh;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+.film-strip-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    /* Cinematic aspect ratio */
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.landing-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    filter: contrast(1.1) saturate(0.8);
+    animation: breathe 8s ease-in-out infinite;
+}
+
+/* Film Grain Texture Overlay */
+.film-grain-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    background-image: url('assets/film-grain.png');
+    /* Or a local grain gif */
+    opacity: 0.05;
+}
+
+.landing-caption {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.dream-text {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: -0.01rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    animation: scrollText 20s linear infinite;
+}
+
+/* ANIMATIONS */
+@keyframes breathe {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.video-preview-gate {
+    width: 0;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    transition: width 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    border-radius: 2px;
+}
+
+/* Tiny Arrow Logic */
+.external-arrow-overlay svg {
+    width: 40px;
+    height: 40px;
+    transform: scale(0.2) translate(-20px, 20px);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-entry:hover .external-arrow-overlay svg {
+    transform: scale(0.2) translate(0, 0);
+    opacity: 1;
+}

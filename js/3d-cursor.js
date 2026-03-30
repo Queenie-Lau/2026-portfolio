@@ -1,7 +1,7 @@
-import * as THREE from 'https://unpkg.com/three@0.165.0/build/three.module.js';
-import { GLTFLoader } from 'https://unpkg.com/three@0.165.0/examples/jsm/loaders/GLTFLoader.js';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-const MODEL_PATH = '../assets/heart-cursor.glb'; 
+const MODEL_PATH = new URL('assets/heart-cursor.glb', window.location.href).href;
 
 let scene, camera, renderer, model;
 let mouseX = 0, mouseY = 0;

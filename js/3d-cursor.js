@@ -1,5 +1,5 @@
 import * as THREE from 'https://esm.sh/three@0.165.0';
-import { GLTFLoader } from 'https://esm.sh/three@0.165.0/examples/jsm/loaders/GLTFLoader.js';
+import { GLTFLoader } from 'https://esm.sh/three@0.165.0/examples/jsm/loaders/GLTFLoader?deps=three@0.165.0';
 
 const MODEL_PATH = new URL('assets/heart-cursor.glb', window.location.href).href;
 

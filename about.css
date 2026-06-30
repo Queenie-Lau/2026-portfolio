@@ -1,0 +1,491 @@
+/* ABOUT PAGE REFRESH */
+
+.about-page {
+    position: relative;
+    overflow: hidden;
+    color: var(--text-white);
+    text-transform: uppercase;
+}
+
+.about-hero-section {
+    position: relative;
+    min-height: 85vh;
+    padding: 5rem 2rem 3rem;
+}
+
+.about-hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 1.5rem;
+    pointer-events: none;
+}
+
+.about-kicker,
+.section-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.about-kicker {
+    max-width: 1400px;
+    margin: 0 auto 1rem;
+}
+
+.about-hero-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-copy h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 10vw, 11rem);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    max-width: 900px;
+    text-shadow: 0 0 14px rgba(255, 180, 80, 0.18);
+}
+
+.about-copy p,
+.about-statement p,
+.about-collab-section p,
+.process-card p {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 245, 0.88);
+}
+
+.about-copy p {
+    max-width: 720px;
+    margin-bottom: 1.25rem;
+}
+
+.about-divider {
+    width: 100%;
+    max-width: 720px;
+    margin: 1.75rem 0 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.about-divider::before {
+    content: "˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪ ˖ ⊹ ࣪";
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+}
+
+.about-small-lotus {
+    position: absolute;
+    right: 5%;
+    top: 6rem;
+    font-family: monospace;
+    font-size: 0.72rem;
+    line-height: 1;
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+
+.about-dream-section {
+    position: relative;
+    background: var(--secondary-white);
+    color: var(--primary-red);
+    padding: 6rem 2rem;
+    overflow: hidden;
+}
+
+.about-dream-section::before,
+.about-dream-section::after {
+    content: "‧₊˚❀༉‧₊˚.";
+    position: absolute;
+    font-family: var(--font-serif);
+    font-size: 8rem;
+    line-height: 1;
+    opacity: 0.10;
+}
+
+.about-dream-section::before {
+    top: -2rem;
+    left: 4%;
+}
+
+.about-dream-section::after {
+    right: 6%;
+    bottom: -4rem;
+}
+
+.about-statement {
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.about-statement p {
+    color: var(--primary-red);
+    font-size: clamp(1.4rem, 3vw, 2.4rem);
+    line-height: 1.35;
+    font-family: var(--font-serif);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+/* .floating-note {
+    position: absolute;
+    border: 1px solid var(--primary-red);
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.78;
+}
+
+.note-one {
+    left: 8%;
+    bottom: 22%;
+    transform: rotate(-8deg);
+}
+
+.note-two {
+    right: 12%;
+    top: 24%;
+    transform: rotate(7deg);
+}
+
+.note-three {
+    right: 24%;
+    bottom: 12%;
+    transform: rotate(-3deg);
+} */
+
+.about-process-section {
+    padding: 6rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.process-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+    padding-bottom: 1.5rem;
+}
+
+.process-heading h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 7vw, 7rem);
+    font-weight: 400;
+    line-height: 0.9;
+    text-transform: uppercase;
+    max-width: 800px;
+    text-align: right;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.process-card {
+    min-height: 310px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.process-card:hover {
+    transform: translateY(-6px) rotate(-1deg);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.process-card span {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    opacity: 0.65;
+}
+
+.process-card h3 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin: 1.5rem 0 1rem;
+}
+
+.process-card p {
+    font-size: 0.9rem;
+}
+
+.about-collab-section {
+    text-align: center;
+    padding: 6rem 2rem 7rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-mini-divider {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.about-collab-section h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(3.5rem, 8vw, 8rem);
+    font-weight: 400;
+    line-height: 0.85;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.about-collab-section p {
+    max-width: 680px;
+    margin: 0 auto 2rem;
+}
+
+.about-cta {
+    display: inline-block;
+    color: var(--text-white);
+    text-decoration: none;
+    border: 1px solid var(--text-white);
+    border-radius: 999px;
+    padding: 0.85rem 2rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.about-cta:hover {
+    background: var(--text-white);
+    color: var(--primary-red);
+    transform: translateY(-3px);
+}
+
+.ascii-shimmer {
+    animation: asciiFloat 5s ease-in-out infinite alternate;
+}
+
+@keyframes asciiFloat {
+    from {
+        transform: translateY(0);
+        opacity: 0.35;
+    }
+
+    to {
+        transform: translateY(-10px);
+        opacity: 0.6;
+    }
+}
+
+/* ABOUT MOBILE */
+
+@media (max-width: 768px) {
+    .about-hero-section {
+        min-height: auto;
+        padding: 3rem 1rem 2.5rem;
+    }
+
+    .about-hero-section::before {
+        inset: 0.75rem;
+        border-radius: 34px;
+    }
+
+    .about-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .about-copy h1 {
+        font-size: clamp(3.4rem, 18vw, 5.4rem);
+        line-height: 0.88;
+    }
+
+    .about-copy p,
+    .about-collab-section p,
+    .process-card p {
+        font-size: 0.92rem;
+        line-height: 1.65;
+    }
+
+    .about-divider {
+        width: 100%;
+        max-width: 720px;
+        height: 1.5rem;
+        margin: 1.75rem 0 2rem;
+        overflow: hidden;
+
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='118' height='24' viewBox='0 0 118 24'%3E%3Ctext x='0' y='17' fill='%23fffff5' font-size='15' font-family='Arial, sans-serif'%3E%CB%96 %E2%8A%B9 %E0%A3%AA %CB%96 %E2%8A%B9 %E0%A3%AA%3C/text%3E%3C/svg%3E");
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+        background-position: left center;
+    }
+
+    .about-divider::before {
+        content: none;
+    }
+
+    .about-small-lotus {
+        position: relative;
+        right: auto;
+        top: auto;
+        display: block;
+        width: max-content;
+        margin: 0 auto 1.5rem;
+        font-size: 0.55rem;
+        opacity: 0.55;
+    }
+
+    .about-portrait-card {
+        transform: rotate(0deg);
+    }
+
+    .portrait-frame,
+    .portrait-frame img {
+        border-radius: 3px;
+        transform: scale(0.5);
+    }
+
+    .about-portrait-card::before {
+        font-size: 0.6rem;
+        padding: 0.1rem 0.3rem;
+        margin: 0 auto;
+    }
+
+    .about-dream-section {
+        padding: 4rem 1rem;
+        justify-content: center;
+    }
+
+    .about-statement p {
+        font-size: clamp(2.1rem, 10vw, 3.4rem);
+        line-height: 0.85;
+    }
+
+    .floating-note {
+        position: static;
+        display: inline-block;
+        margin: 0.35rem;
+        transform: none;
+    }
+
+    .about-process-section {
+        padding: 4rem 1rem;
+    }
+
+    .process-heading {
+        display: block;
+    }
+
+    .process-heading h2 {
+        text-align: left;
+        font-size: clamp(3rem, 14vw, 4.8rem);
+        margin-top: 1rem;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-card {
+        min-height: auto;
+        border-radius: 32px;
+        padding: 1.25rem;
+    }
+
+    .process-card span {
+        font-size: 2rem;
+    }
+
+    .process-card h3 {
+        font-size: 2.2rem;
+        margin: 1rem 0;
+    }
+
+    .about-collab-section {
+        padding: 4rem 1rem 5rem;
+    }
+
+    .about-collab-section h2 {
+        font-size: clamp(3.2rem, 15vw, 5rem);
+    }
+
+    .about-mini-divider {
+        font-size: 0.8rem;
+    }
+}
+
+/* ABOUT PAGE CURSOR FIX */
+
+/* Restore a normal cursor on the About page as a fallback */
+html,
+body,
+a,
+button,
+summary,
+.about-page,
+.about-page * {
+    cursor: auto !important;
+}
+
+/* Make clickable elements feel clickable again */
+a,
+button,
+summary,
+.about-cta,
+.process-card {
+    cursor: pointer !important;
+}
+
+/* If the 3D cursor canvas loads on desktop, keep it above the About layout */
+@media (hover: hover) and (pointer: fine) {
+    #cursor-canvas {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        pointer-events: none !important;
+        z-index: 999999 !important;
+        display: block !important;
+    }
+}
+
+/* On mobile/tablet, disable the custom cursor canvas completely */
+@media (hover: none), (pointer: coarse) {
+    #cursor-canvas {
+        display: none !important;
+    }
+
+    html,
+    body,
+    a,
+    button,
+    summary,
+    .about-page,
+    .about-page * {
+        cursor: auto !important;
+    }
+}
